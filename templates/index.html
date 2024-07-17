@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Upload and Prediction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h1 {
+            text-align: center;
+        }
+        .upload-form {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            font-weight: bold;
+        }
+        .form-group input[type="file"] {
+            display: block;
+            width: 100%;
+            padding: 8px;
+            margin-top: 4px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        .form-group button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            font-size: 18px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .output {
+            margin-top: 20px;
+            text-align: center;
+        }
+        .output img {
+            max-width: 100%;
+            margin-top: 10px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .predictions {
+            margin-top: 10px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <h1>Image Upload and Prediction</h1>
+    <div class="upload-form">
+        <form action="/upload" method="post" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="file">Select an image or video to upload:</label>
+                <input type="file" id="file" name="file" accept=".jpg, .jpeg, .png, .mp4, .avi, .mov" required>
+            </div>
+            <button type="submit">Upload File</button>
+        </form>
+    </div>
+
+    <div class="output">
+        <!-- This area will display the uploaded image and predictions -->
+    </div>
+
+    <script>
+        // Optional JavaScript for additional client-side functionality
+        // You can add JavaScript here to handle responses or further UI interactions
+    </script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Search Results</title>
+</head>
+<body>
+    <h1>Search Results for "{{ query }}"</h1>
+    <ul>
+        {% for result in results %}
+        <li>
+            <h2>Frame: {{ result.frame }}</h2>
+            <ul>
+                {% for pred in result.predictions %}
+                <li>{{ pred[1] }}: {{ pred[2] }}</li>
+                {% endfor %}
+            </ul>
+        </li>
+        {% endfor %}
+    </ul>
+    <a href="/">Back to Home</a>
+</body>
+</html>
