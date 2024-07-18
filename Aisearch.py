@@ -79,7 +79,7 @@ def upload_video():
             extract_frames(os.path.join(app.config['UPLOAD_FOLDER'], filename), 'frames')
         else:
             predictions = predict(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-            return jsonify(predictions)
+        return jsonify(predictions)
 
     return redirect(url_for('index'))
 

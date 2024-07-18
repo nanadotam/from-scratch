@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Object Detection Results</title>
+</head>
+<body>
+    <h1>Object Detection Results</h1>
+    {% if results %}
+        {% for result in results %}
+            <h3>Frame Index: {{ result.frame_idx }}</h3>
+            <p>Class: {{ result.class }}</p>
+            <p>Probability: {{ result.probability * 100 }}%</p>
+            <img src="data:image/jpeg;base64,{{ result.frame_base64 }}" alt="Frame {{ result.frame_idx }}" style="width:300px;height:auto;">
+            <hr>
+        {% endfor %}
+    {% else %}
+        <p>No objects found matching your query.</p>
+    {% endif %}
+    <a href="/">Upload Another Video</a>
+</body>
+</html>
